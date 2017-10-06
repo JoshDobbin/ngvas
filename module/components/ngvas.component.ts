@@ -45,12 +45,14 @@ export class NgvasComponent implements AfterContentInit, OnDestroy {
     @Input("width")
     public set width (w: number) {
         this._width = +w;
+        this.renderer.setAttribute(this.canvasRef.nativeElement;, "width", String(+w));        
         this._canvasGroup.ctx.canvas.width = +w;
     }
 
     @Input("height")
     public set height (h: number) {
         this._height = +h;
+        this.renderer.setAttribute(this.canvasRef.nativeElement;, "height", String(+h));
         this._canvasGroup.ctx.canvas.height = +h;
     }
 
